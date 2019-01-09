@@ -13,14 +13,7 @@ app.use((req,res,next)=>{
     console.log('now',now,req.method,req.url);
     next();
 });
-app.get('/',(req,res)=>
-{
-    res.render('Down.hbs',{
-        pageTitle:'This is the Home page',
-        welcome:'This is the text',
-        currentYear: new Date().getFullYear()
-    });
-});
+
 app.get('/',(req,res)=>
 {
     res.render('Home.hbs',{
