@@ -1,5 +1,6 @@
 const express = require('express');
 const hbs = require('hbs');
+const port = process.env.PORT || 8080;
 var app = express();
 hbs.registerPartials(__dirname+'/Views/partials');
 hbs.registerHelper('screamit',(text)=>{
@@ -16,7 +17,7 @@ app.get('/',(req,res)=>
 {
     res.render('Down.hbs',{
         pageTitle:'This is the Home page',
-        welcome:'my text',
+        welcome:'This is the text',
         currentYear: new Date().getFullYear()
     });
 });
@@ -24,7 +25,7 @@ app.get('/',(req,res)=>
 {
     res.render('Home.hbs',{
         pageTitle:'This is the Home page',
-        welcome:'my text',
+        welcome:'This is the text',
         currentYear: new Date().getFullYear()
     });
 });
@@ -47,5 +48,7 @@ app.get('/bad',(req,res)=>
         }
     )
 });
-app.listen(8080);
+app.listen(port,()=>
+{
 console.log('Server running on port 8080');
+});
