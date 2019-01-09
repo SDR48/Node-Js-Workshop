@@ -13,7 +13,6 @@ app.use((req,res,next)=>{
     console.log('now',now,req.method,req.url);
     next();
 });
-
 app.get('/',(req,res)=>
 {
     res.render('Home.hbs',{
@@ -22,7 +21,6 @@ app.get('/',(req,res)=>
         currentYear: new Date().getFullYear()
     });
 });
-
 app.get('/sdr',(req,res)=>
 {
     res.render('sdr.hbs',{
@@ -31,7 +29,6 @@ app.get('/sdr',(req,res)=>
         currentYear: new Date().getFullYear()
     });
 });
-
 app.get('/bad',(req,res)=>
 {
     res.send(
